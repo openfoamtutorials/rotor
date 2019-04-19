@@ -4,9 +4,9 @@
 set -e
 
 # Make the mesh:
-gmsh mesh/main.geo -3 -format msh2 -o main.msh
+gmsh mesh/main.geo -3 -format msh2 -o mesh/main.msh
 # Convert the mesh to OpenFOAM format:
-gmshToFoam main.msh -case case
+gmshToFoam mesh/main.msh -case case
 # Adjust polyMesh/boundary:
 changeDictionary -case case
 # Finally, run the simulation:
