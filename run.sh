@@ -4,7 +4,7 @@
 set -e
 
 # Make the mesh:
-gmsh -3 -o main.msh mesh/main.geo
+gmsh mesh/main.geo -3 -format msh2 -o main.msh
 # Convert the mesh to OpenFOAM format:
 gmshToFoam main.msh -case case
 # Adjust polyMesh/boundary:
